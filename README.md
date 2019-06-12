@@ -9,6 +9,8 @@ Control your garage with a Raspberry Pi.
 The following Python packages are required:
 
 - [RPi.GPIO](https://pypi.org/project/RPi.GPIO/)
+- [Flask](https://pypi.org/project/Flask/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
 Click [here](requirements.txt) for the specific versions of the packages used for this project.
 
