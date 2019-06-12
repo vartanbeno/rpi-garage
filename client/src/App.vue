@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FormBox/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import FormBox from './components/FormBox';
 
 export default {
     name: 'app',
     components: {
-        HelloWorld
+        FormBox
     }
 };
 </script>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    /* todo remove this bg color */
+    background-color: #555;
 }
 </style>
