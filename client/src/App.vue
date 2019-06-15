@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <FormBox/>
+    <Container/>
   </div>
 </template>
 
 <script>
 import FormBox from './components/FormBox';
+import Container from './components/Container';
 
 export default {
     name: 'app',
     components: {
-        FormBox
+        FormBox,
+        Container
     }
 };
 </script>
@@ -27,6 +29,10 @@ body {
     padding: 0;
 }
 
+body {
+    background-color: #edeff4;
+}
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -34,8 +40,20 @@ body {
     color: #2c3e50;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100%;
-    /* todo remove this bg color */
-    background-color: #555;
+    margin: 0 10rem;
+}
+
+@media (max-width: 960px) {
+    #app {
+        margin: 0 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #app {
+        margin: 0 1rem;
+    }
 }
 </style>

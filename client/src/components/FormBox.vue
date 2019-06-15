@@ -42,23 +42,25 @@ export default {
     line-height: 1.7rem;
     font-size: 16px;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
     color: #fff;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    background-color: #42b883;      /* Vue green */
-    border: 2px solid #fff;
+    background-color: #42b883; /* Vue green */
+    border: none;
 }
 
 .form-container .garage-button:hover {
     background-color: #39aa77;
-    font-size: 18px;
-    transition: all .2s;
+    transform: translateY(-1px);
+    transition: all 0.15s ease;
 }
 
 .form-container .garage-button:active {
     background-color: #2fa06d;
-    font-size: 18px;
-    transition: all .2s;
+    transform: translateY(1px);
+    transition: all 0.15s ease;
 }
 </style>
