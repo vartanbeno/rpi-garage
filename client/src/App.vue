@@ -5,13 +5,11 @@
 </template>
 
 <script>
-import FormBox from './components/FormBox';
 import Container from './components/Container';
 
 export default {
     name: 'app',
     components: {
-        FormBox,
         Container
     }
 };
