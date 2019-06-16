@@ -1,7 +1,15 @@
 <template>
     <div id="app">
         <Container>
-            <div class="image-container"></div>
+            <div class="icon-container">
+                <font-awesome-icon :icon="['fas', 'warehouse']" size="3x" />
+                <a
+                    class="github-link"
+                    href="https://github.com/vartanbeno/rpi-garage"
+                >
+                    <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+                </a>
+            </div>
             <div class="divider-container"><VDivider /></div>
             <div class="form-box-container">
                 <FormBox />
@@ -65,8 +73,26 @@ body {
     }
 }
 
-.image-container {
+.icon-container {
     width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 750px) {
+    .icon-container {
+        flex-direction: column;
+    }
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #42b883;
 }
 
 .divider-container {

@@ -9,6 +9,10 @@
     "prettier": "prettier --write \"src/**/*\""
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
