@@ -10,7 +10,7 @@
                     <font-awesome-icon :icon="['fab', 'github']" size="3x" />
                 </a>
             </div>
-            <div class="divider-container"><VDivider /></div>
+            <div><VDivider /></div>
             <div class="form-box-container">
                 <FormBox />
             </div>
@@ -93,10 +93,6 @@ a {
 
 a:hover {
     color: #42b883;
-}
-
-.divider-container {
-    height: 200px;
 }
 
 .form-box-container {
