@@ -1,9 +1,6 @@
 <template>
     <div class="container">
-        <div class="image-container"></div>
-        <div class="form-container">
-            <FormBox />
-        </div>
+        <slot></slot>
     </div>
 </template>
 
@@ -21,7 +18,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,9 +26,5 @@ export default {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.07);
-}
-
-.container > div {
-    width: 50%;
 }
 </style>

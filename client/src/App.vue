@@ -1,16 +1,26 @@
 <template>
     <div id="app">
-        <Container />
+        <Container>
+            <div class="image-container"></div>
+            <div class="divider-container"><VDivider /></div>
+            <div class="form-box-container">
+                <FormBox />
+            </div>
+        </Container>
     </div>
 </template>
 
 <script>
 import Container from './components/Container';
+import FormBox from './components/FormBox';
+import VDivider from './components/VDivider';
 
 export default {
     name: 'app',
     components: {
-        Container
+        Container,
+        FormBox,
+        VDivider
     }
 };
 </script>
@@ -40,12 +50,12 @@ body {
     flex-direction: column;
     justify-content: center;
     min-height: 100%;
-    margin: 0 10rem;
+    margin: 0 12rem;
 }
 
 @media (max-width: 960px) {
     #app {
-        margin: 0 5rem;
+        margin: 0 4rem;
     }
 }
 
@@ -53,5 +63,18 @@ body {
     #app {
         margin: 0 1rem;
     }
+}
+
+.image-container {
+    width: 35%;
+}
+
+.divider-container {
+    height: 200px;
+}
+
+.form-box-container {
+    margin: 2rem 0;
+    width: 65%;
 }
 </style>

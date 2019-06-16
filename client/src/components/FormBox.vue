@@ -52,12 +52,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.form-container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-}
-
+.form-container,
 .form-controls-container {
     display: flex;
     flex-direction: column;
