@@ -5,13 +5,8 @@
 </template>
 
 <script>
-import FormBox from './FormBox';
-
 export default {
-    name: 'Container',
-    components: {
-        FormBox
-    }
+    name: 'Container'
 };
 </script>
 

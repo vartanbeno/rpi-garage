@@ -58,7 +58,7 @@ body {
     flex-direction: column;
     justify-content: center;
     min-height: 100%;
-    margin: 0 12rem;
+    margin: 0 15rem;
 }
 
 @media (max-width: 960px) {
