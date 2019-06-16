@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <div class="image-container"></div>
-    <div class="form-container">
-        <FormBox/>
+    <div class="container">
+        <div class="image-container"></div>
+        <div class="form-container">
+            <FormBox />
+        </div>
     </div>
-  </div>
 </template>
 
 <script>

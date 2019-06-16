@@ -1,23 +1,25 @@
 <template>
-  <div class="form-container">
-    <Header :level="1">Garage Opener</Header>
-    <form @submit="submitForm">
-      <div class="form-controls-container">
-        <input
-          class="password-input"
-          type="password"
-          v-model="password"
-          placeholder="Enter Password"
-        >
-        <button
-          class="garage-button"
-          type="submit"
-          :disabled="isDisabled"
-          v-bind:class="{ 'garage-button-disabled': isDisabled }"
-        >Toggle Garage</button>
-      </div>
-    </form>
-  </div>
+    <div class="form-container">
+        <Header :level="1">Garage Opener</Header>
+        <form @submit="submitForm">
+            <div class="form-controls-container">
+                <input
+                    class="password-input"
+                    type="password"
+                    v-model="password"
+                    placeholder="Enter Password"
+                />
+                <button
+                    class="garage-button"
+                    type="submit"
+                    :disabled="isDisabled"
+                    v-bind:class="{ 'garage-button-disabled': isDisabled }"
+                >
+                    Toggle Garage
+                </button>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -79,7 +81,7 @@ export default {
 .form-controls-container .garage-button {
     margin-top: 1rem;
     padding: 0.3rem 1rem;
-    width: 180px;
+    width: 200px;
     line-height: 1.7rem;
     font-size: 16px;
     font-weight: bold;
