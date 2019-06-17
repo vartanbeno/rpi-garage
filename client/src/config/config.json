@@ -1,0 +1,5 @@
+{
+    "host": "Place host here, e.g. localhost, something.com, etc.",
+    "port": "Place port number here; can leave blank if it's 80",
+    "endpoint": "Place endpoint here, e.g. if it's something.com:12000/garage, then put /garage or garage"
+}

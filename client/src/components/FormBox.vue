@@ -24,6 +24,7 @@
 
 <script>
 import Header from './Header';
+import GarageService from '../services/GarageService';
 
 export default {
     name: 'FormBox',
@@ -43,8 +44,12 @@ export default {
         },
         submitForm(e) {
             e.preventDefault();
+            GarageService.toggleGarageDoor(this.password).then(
+                res => alert(`${res.status}: ${res.data}`),
+                err => alert(`${err.response.status}: ${err.response.data}`)
+            );
             this.disableButton();
-            setTimeout(() => this.enableButton(), 5000);
+            setTimeout(this.enableButton, 5000);
         }
     }
 };

@@ -6,6 +6,7 @@
                 <a
                     class="github-link"
                     href="https://github.com/vartanbeno/rpi-garage"
+                    target="_blank"
                 >
                     <font-awesome-icon :icon="['fab', 'github']" size="3x" />
                 </a>
