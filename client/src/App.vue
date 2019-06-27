@@ -5,24 +5,8 @@
                 <Header :level="1">Garage Door Opener</Header>
                 <font-awesome-icon :icon="['fas', 'warehouse']" size="2x" />
             </div>
-            <div class="actions-container">
-                <div class="icon-container">
-                    <font-awesome-icon :icon="['fas', 'warehouse']" size="3x" />
-                    <a
-                        class="github-link"
-                        href="https://github.com/vartanbeno/rpi-garage"
-                        target="_blank"
-                    >
-                        <font-awesome-icon
-                            :icon="['fab', 'github']"
-                            size="3x"
-                        />
-                    </a>
-                </div>
-                <div><VDivider /></div>
-                <div class="form-box-container">
-                    <FormBox />
-                </div>
+            <div class="garage-container">
+                <PasswordField />
             </div>
         </Container>
     </div>
@@ -30,16 +14,16 @@
 
 <script>
 import Container from './components/Container';
-import FormBox from './components/FormBox';
 import Header from './components/Header';
+import PasswordField from './components/PasswordField';
 import VDivider from './components/VDivider';
 
 export default {
     name: 'app',
     components: {
         Container,
-        FormBox,
         Header,
+        PasswordField,
         VDivider
     }
 };
@@ -108,31 +92,11 @@ body {
     }
 }
 
-.actions-container {
+.garage-container {
     display: flex;
-    padding: 2rem 0;
+    margin: 0 1rem;
+    padding: 1.5rem 0;
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
-}
-
-.icon-container {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-a {
-    color: inherit;
-}
-
-a:hover {
-    color: #42b883;
-}
-
-.form-box-container {
-    margin: 2rem 0;
-    width: 65%;
 }
 </style>
