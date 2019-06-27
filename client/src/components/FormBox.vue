@@ -1,6 +1,6 @@
 <template>
     <div class="form-container">
-        <Header :level="1">Garage Opener</Header>
+        <Header :level="2">What's the Password?</Header>
         <form @submit="submitForm">
             <div class="form-controls-container">
                 <input

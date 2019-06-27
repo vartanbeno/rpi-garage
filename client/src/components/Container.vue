@@ -13,10 +13,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-    padding: 3rem 2rem 3rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.07);
