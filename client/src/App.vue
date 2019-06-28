@@ -7,6 +7,10 @@
             </div>
             <div class="garage-container">
                 <PasswordField />
+                <div class="garage-buttons-container">
+                    <GarageButton :which="'left'"/>
+                    <GarageButton :which="'right'"/>
+                </div>
             </div>
         </Container>
     </div>
@@ -14,17 +18,17 @@
 
 <script>
 import Container from './components/Container';
+import GarageButton from './components/GarageButton';
 import Header from './components/Header';
 import PasswordField from './components/PasswordField';
-import VDivider from './components/VDivider';
 
 export default {
     name: 'app',
     components: {
         Container,
+        GarageButton,
         Header,
-        PasswordField,
-        VDivider
+        PasswordField
     }
 };
 </script>
@@ -94,9 +98,16 @@ body {
 
 .garage-container {
     display: flex;
+    flex-direction: column;
     margin: 0 1rem;
     padding: 1.5rem 0;
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
+}
+
+.garage-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
 }
 </style>

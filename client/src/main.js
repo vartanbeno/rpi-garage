@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from './App.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faWarehouse } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faLock, faWarehouse } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faWarehouse, faGithub);
+library.add(faLightbulb, faLock, faWarehouse, faGithub);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
