@@ -8,8 +8,8 @@
             <div class="garage-container">
                 <PasswordField />
                 <div class="garage-buttons-container">
-                    <GarageButton :which="'left'" />
-                    <GarageButton :which="'right'" />
+                    <GarageButton :whichDoor="'left'" />
+                    <GarageButton :whichDoor="'right'" />
                 </div>
             </div>
         </Container>

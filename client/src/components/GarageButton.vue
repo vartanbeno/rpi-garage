@@ -1,6 +1,6 @@
 <template>
     <div class="garage-button-container">
-        <button>
+        <button @click="toggleGarage">
             <div class="button-light"></div>
         </button>
         <div class="garage-button-label">
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import GarageService from '../services/GarageService';
 import Header from './Header';
 
 export default {
@@ -29,9 +30,18 @@ export default {
         Header
     },
     props: {
-        which: {
+        whichDoor: {
             type: String,
             required: true
+        }
+    },
+    methods: {
+        toggleGarage() {
+            // TODO: find a way to access password from here.
+            // GarageService.toggleGarageDoor(this.password, this.whichDoor).then(
+            //     res => alert(`${res.status}: ${res.data}`),
+            //     err => alert(`${err.response.status}: ${err.response.data}`)
+            // );
         }
     }
 };
@@ -63,6 +73,7 @@ button {
     background-color: #fff;
     border: none;
     border-bottom: 4px solid #d1d3da;
+    -webkit-appearance: none; /* makes it look as intended on iOS Safari */
 }
 
 .garage-button-container,
