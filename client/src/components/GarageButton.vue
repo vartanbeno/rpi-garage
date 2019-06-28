@@ -1,6 +1,8 @@
 <template>
     <div class="garage-button-container">
-        <button></button>
+        <button>
+            <div class="button-light"></div>
+        </button>
         <div class="garage-button-label">
             <Header :level="5">LiftXpert</Header>
             <Header :level="6">Security</Header>
@@ -40,6 +42,7 @@ export default {
 .garage-button-container {
     display: flex;
     flex-direction: column;
+    color: #fff;
     height: 300px;
     width: 200px;
     padding: 0.75rem;
@@ -51,28 +54,38 @@ export default {
 }
 
 button {
+    display: flex;
+    justify-content: center;
     height: 55%;
     width: 100%;
     outline: none;
     cursor: pointer;
+    background-color: #fff;
     border: none;
-    border: 4px solid #d1d3da;
+    border-bottom: 4px solid #d1d3da;
 }
 
 .garage-button-container,
 button {
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 button:active {
-    /* background-color: #2fa06d; */
-    border: none;
+    background-color: #edeff4;
     transform: translateY(1px);
     transition: all 0.15s ease;
 }
 
+button .button-light {
+    background: transparent;
+    height: 4px;
+    width: 4px;
+    background-color: #42b883;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px #42b883;
+}
+
 .garage-button-label {
-    color: #fff;
     padding: 0.25rem;
     border: 1px solid #2c3e50;
     border-radius: 4px;
