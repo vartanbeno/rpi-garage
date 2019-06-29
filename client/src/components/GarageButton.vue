@@ -1,7 +1,13 @@
 <template>
-    <div class="garage-button-container">
-        <button @click="toggleGarage">
-            <div class="button-light"></div>
+    <div
+        class="garage-button-container"
+        v-bind:class="{ disabled: isDisabled }"
+    >
+        <button @click="toggleGarage" :disabled="isDisabled">
+            <div
+                class="button-light"
+                v-bind:class="{ disabled: isDisabled }"
+            ></div>
         </button>
         <div class="garage-button-label">
             <Header :level="5">LiftXpert</Header>
@@ -38,10 +44,17 @@ export default {
             type: String
         }
     },
+    data: () => ({
+        isDisabled: false
+    }),
     methods: {
         toggleGarage() {
             GarageService.toggleGarageDoor(this.password, this.whichDoor).then(
-                res => alert(`${res.status}: ${res.data}`),
+                res => {
+                    this.isDisabled = true;
+                    setTimeout(() => (this.isDisabled = false), 3000);
+                    alert(`${res.status}: ${res.data}`);
+                },
                 err => alert(`${err.response.status}: ${err.response.data}`)
             );
         }
@@ -59,6 +72,10 @@ export default {
     width: 200px;
     padding: 0.75rem;
     background-color: #000;
+}
+
+.disabled {
+    opacity: 0.6;
 }
 
 .garage-button-container > :not(:first-child) {
@@ -96,6 +113,11 @@ button .button-light {
     background-color: #42b883;
     border-radius: 50%;
     box-shadow: 0 0 5px 5px #42b883;
+}
+
+button .button-light.disabled {
+    background-color: #f44336;
+    box-shadow: 0 0 5px 5px #f44336;
 }
 
 .garage-button-label {

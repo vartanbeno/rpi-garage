@@ -8,14 +8,24 @@
             <div class="garage-container">
                 <PasswordField @change="getPassword" />
                 <div class="garage-buttons-container">
-                    <GarageButton
-                        :whichDoor="'LEFT'"
-                        v-bind:password="password"
-                    />
-                    <GarageButton
-                        :whichDoor="'RIGHT'"
-                        v-bind:password="password"
-                    />
+                    <div>
+                        <Header :level="1" class="garage-button-header">
+                            Left
+                        </Header>
+                        <GarageButton
+                            :whichDoor="'LEFT'"
+                            v-bind:password="password"
+                        />
+                    </div>
+                    <div>
+                        <Header :level="1" class="garage-button-header">
+                            Right
+                        </Header>
+                        <GarageButton
+                            :whichDoor="'RIGHT'"
+                            v-bind:password="password"
+                        />
+                    </div>
                 </div>
             </div>
         </Container>
@@ -127,6 +137,11 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 2rem;
+}
+
+.garage-button-header {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 @media (max-width: 500px) {
