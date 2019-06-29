@@ -6,10 +6,16 @@
                 <font-awesome-icon :icon="['fas', 'warehouse']" size="2x" />
             </div>
             <div class="garage-container">
-                <PasswordField />
+                <PasswordField @change="getPassword" />
                 <div class="garage-buttons-container">
-                    <GarageButton :whichDoor="'left'" />
-                    <GarageButton :whichDoor="'right'" />
+                    <GarageButton
+                        :whichDoor="'LEFT'"
+                        v-bind:password="password"
+                    />
+                    <GarageButton
+                        :whichDoor="'RIGHT'"
+                        v-bind:password="password"
+                    />
                 </div>
             </div>
         </Container>
@@ -29,6 +35,14 @@ export default {
         GarageButton,
         Header,
         PasswordField
+    },
+    data: () => ({
+        password: ''
+    }),
+    methods: {
+        getPassword(password) {
+            this.password = password;
+        }
     }
 };
 </script>

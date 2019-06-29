@@ -6,6 +6,7 @@
             type="password"
             v-model="password"
             placeholder="Enter Password"
+            v-on:input="emitPassword"
         />
     </div>
 </template>
@@ -19,9 +20,13 @@ export default {
         Header
     },
     data: () => ({
-        password: '',
-        isDisabled: false
-    })
+        password: ''
+    }),
+    methods: {
+        emitPassword(event) {
+            this.$emit('change', event.target.value);
+        }
+    }
 };
 </script>
 

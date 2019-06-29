@@ -33,15 +33,17 @@ export default {
         whichDoor: {
             type: String,
             required: true
+        },
+        password: {
+            type: String
         }
     },
     methods: {
         toggleGarage() {
-            // TODO: find a way to access password from here.
-            // GarageService.toggleGarageDoor(this.password, this.whichDoor).then(
-            //     res => alert(`${res.status}: ${res.data}`),
-            //     err => alert(`${err.response.status}: ${err.response.data}`)
-            // );
+            GarageService.toggleGarageDoor(this.password, this.whichDoor).then(
+                res => alert(`${res.status}: ${res.data}`),
+                err => alert(`${err.response.status}: ${err.response.data}`)
+            );
         }
     }
 };
