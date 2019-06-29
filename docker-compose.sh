@@ -11,7 +11,7 @@ docker image build -t $SERVER_NAME $SERVER_PATH
 docker image build -t $CLIENT_NAME $CLIENT_PATH
 
 # Set environment variables for the server
-. $SCRIPT_PATH/.env
+. $SERVER_PATH/.env
 
 # Passing --privileged gives the container full access to the host's devices (in this case, we want GPIO)
 # Could instead pass in --device /dev/gpiomem
