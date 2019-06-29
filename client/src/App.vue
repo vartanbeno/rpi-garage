@@ -2,7 +2,7 @@
     <div id="app">
         <Container class="main-container">
             <div class="header-container">
-                <Header :level="1">Garage Door Opener</Header>
+                <Header :level="1" class="title">Garage Door Opener</Header>
                 <font-awesome-icon :icon="['fas', 'warehouse']" size="2x" />
             </div>
             <div class="garage-container">
@@ -108,6 +108,10 @@ body {
         flex-direction: column;
         text-align: center;
     }
+
+    .title {
+        font-size: 28px;
+    }
 }
 
 .garage-container {
@@ -122,6 +126,26 @@ body {
 .garage-buttons-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 500px) {
+    .main-container {
+        margin: 1rem 0;
+    }
+
+    .garage-container {
+        align-items: center;
+    }
+
+    .garage-buttons-container {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .garage-buttons-container > :not(:first-child) {
+        margin-top: 2rem;
+    }
 }
 </style>

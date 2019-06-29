@@ -62,4 +62,15 @@ export default {
         margin: 0;
     }
 }
+
+@media (max-width: 500px) {
+    .password-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .password-input {
+        text-align: center;
+    }
+}
 </style>
