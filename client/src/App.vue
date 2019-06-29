@@ -1,19 +1,32 @@
 <template>
     <div id="app">
-        <Container>
-            <div class="icon-container">
-                <font-awesome-icon :icon="['fas', 'warehouse']" size="3x" />
-                <a
-                    class="github-link"
-                    href="https://github.com/vartanbeno/rpi-garage"
-                    target="_blank"
-                >
-                    <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-                </a>
+        <Container class="main-container">
+            <div class="header-container">
+                <Header :level="1" class="title">Garage Door Opener</Header>
+                <font-awesome-icon :icon="['fas', 'warehouse']" size="2x" />
             </div>
-            <div><VDivider /></div>
-            <div class="form-box-container">
-                <FormBox />
+            <div class="garage-container">
+                <PasswordField @change="getPassword" />
+                <div class="garage-buttons-container">
+                    <div>
+                        <Header :level="1" class="garage-button-header">
+                            Left
+                        </Header>
+                        <GarageButton
+                            :whichDoor="'LEFT'"
+                            v-bind:password="password"
+                        />
+                    </div>
+                    <div>
+                        <Header :level="1" class="garage-button-header">
+                            Right
+                        </Header>
+                        <GarageButton
+                            :whichDoor="'RIGHT'"
+                            v-bind:password="password"
+                        />
+                    </div>
+                </div>
             </div>
         </Container>
     </div>
@@ -21,15 +34,25 @@
 
 <script>
 import Container from './components/Container';
-import FormBox from './components/FormBox';
-import VDivider from './components/VDivider';
+import GarageButton from './components/GarageButton';
+import Header from './components/Header';
+import PasswordField from './components/PasswordField';
 
 export default {
     name: 'app',
     components: {
         Container,
-        FormBox,
-        VDivider
+        GarageButton,
+        Header,
+        PasswordField
+    },
+    data: () => ({
+        password: ''
+    }),
+    methods: {
+        getPassword(password) {
+            this.password = password;
+        }
     }
 };
 </script>
@@ -74,30 +97,70 @@ body {
     }
 }
 
-.icon-container {
-    width: 35%;
+.main-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
 }
 
-@media (max-width: 750px) {
-    .icon-container {
+.header-container {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.07);
+    background-color: #d1d3da;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+@media (max-width: 450px) {
+    .header-container {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 28px;
     }
 }
 
-a {
-    color: inherit;
+.garage-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 1.5rem 0;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
 }
 
-a:hover {
-    color: #42b883;
+.garage-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
 }
 
-.form-box-container {
-    margin: 2rem 0;
-    width: 65%;
+.garage-button-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+    .main-container {
+        margin: 1rem 0;
+    }
+
+    .garage-container {
+        align-items: center;
+    }
+
+    .garage-buttons-container {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .garage-buttons-container > :not(:first-child) {
+        margin-top: 2rem;
+    }
 }
 </style>
