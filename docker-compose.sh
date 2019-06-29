@@ -18,4 +18,4 @@ docker image build -t $CLIENT_NAME $CLIENT_PATH
 docker container run --name $SERVER_NAME --detach --publish $PORT:$PORT --restart unless-stopped --privileged $SERVER_NAME
 
 CLIENT_PORT=${1-80}
-docker container run --name $CLIENT_NAME -d -p $1:80 $CLIENT_NAME
+docker container run --name $CLIENT_NAME -d -p $CLIENT_PORT:80 $CLIENT_NAME
